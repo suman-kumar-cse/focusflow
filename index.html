@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FocusFlow — Daily Efficiency Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>⚡ FocusFlow</h1>
+        <p>Boost your day-to-day efficiency with smart tasks & deep focus.</p>
+      </div>
+    </header>
+
+    <!-- Live Efficiency Stats -->
+    <div class="card">
+      <h2>📊 Today's Efficiency</h2>
+      <div class="stats">
+        <div class="stat-box">
+          <h3 id="completedCount">0</h3>
+          <span>Tasks Done</span>
+        </div>
+        <div class="stat-box">
+          <h3 id="pendingCount">0</h3>
+          <span>Pending</span>
+        </div>
+        <div class="stat-box">
+          <h3 id="sessionCount">0</h3>
+          <span>Focus Sessions</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- Pomodoro Timer -->
+      <div class="card">
+        <h2>⏱️ Deep Focus Timer</h2>
+        <div class="btn-group">
+          <button class="btn-secondary" onclick="setMode(25)">Focus (25m)</button>
+          <button class="btn-secondary" onclick="setMode(5)">Break (5m)</button>
+        </div>
+        <div class="timer-display" id="timer">25:00</div>
+        <div class="btn-group">
+          <button class="btn-primary" id="startBtn" onclick="toggleTimer()">Start</button>
+          <button class="btn-secondary" onclick="resetTimer()">Reset</button>
+        </div>
+      </div>
+
+      <!-- Priority Task Manager -->
+      <div class="card">
+        <h2>✅ Smart Task List</h2>
+        <div class="task-form">
+          <input type="text" id="taskInput" placeholder="Add a daily task..." />
+          <select id="priorityInput">
+            <option value="high">High</option>
+            <option value="medium" selected>Medium</option>
+            <option value="low">Low</option>
+          </select>
+          <button class="btn-primary" onclick="addTask()">Add</button>
+        </div>
+        <ul id="taskList"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
